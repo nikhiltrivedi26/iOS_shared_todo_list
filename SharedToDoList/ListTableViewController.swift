@@ -9,14 +9,12 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-//import ChameleonFramework
 
 class ListTableViewController: UITableViewController {
 
     @IBOutlet var toDoTableView: UITableView!
     
-    var toDoArray = [ToDoObject]()
-    //var dbr: DatabaseReference = ""
+    var array = [ToDoObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,15 +27,14 @@ class ListTableViewController: UITableViewController {
         toDoTableView.separatorStyle = .none
     }
 
-    // MARK - Tableview Datasource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return toDoArray.count
+        return array.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
-        cell.textLabel?.text = toDoArray[indexPath.row].text
-        if(toDoArray[indexPath.row].checkmark == true) {
+        cell.textLabel?.text = array[indexPath.row].text
+        if(array[indexPath.row].checkmark == true) {
             cell.accessoryType = .checkmark
         } else {
             cell.accessoryType = .none
@@ -50,10 +47,10 @@ class ListTableViewController: UITableViewController {
         if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
             // Delete the item
             let messagesDB = Database.database().reference().child("ToDos")
-            toDoArray.remove(at: indexPath.row)
-    //        messagesDB.child("-LVeiJY5qN2mhq6UjEMN").removeValue()
+            messagesDB.child(array[indexPath.row].key).removeValue()
+            array.remove(at: indexPath.row)
         } else {
-            toDoArray[indexPath.row].checkmark = true
+            array[indexPath.row].checkmark = true
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         }
         
@@ -67,20 +64,26 @@ class ListTableViewController: UITableViewController {
         var textField = UITextField()
         let alert = UIAlertController(title: "Add New ToDo", message: "", preferredStyle: .alert)
         
+        let toDoObj = ToDoObject()
+        toDoObj.checkmark = false //1
+        
         let action = UIAlertAction(title: "Go", style: .default) { (action) in
             let toDoDictionary = ["Sender": Auth.auth().currentUser?.email, "ToDo": textField.text!]
-            messagesDB.childByAutoId().setValue(toDoDictionary) {
+            let va = messagesDB.childByAutoId()
+            print("follwoing is key")
+            toDoObj.key = va.description() //2
+            print(toDoObj.key)
+            toDoObj.text = textField.text! //3
+            toDoObj.person = Auth.auth().currentUser!.email! //4
+            va.setValue(toDoDictionary) {
                 (error, reference) in
                 if error != nil {
                     print(error!)
                 }
-                print("reference")
             }
             
             self.tableView.reloadData()
         }
-        
-       // dbr = reference
         
         alert.addTextField { (alertTextField) in
             textField = alertTextField
@@ -102,8 +105,11 @@ class ListTableViewController: UITableViewController {
             let toDoObj = ToDoObject()
             toDoObj.person = snapshotValue["Sender"]!
             toDoObj.text = snapshotValue["ToDo"]!
+            toDoObj.key = snapshot.key
             toDoObj.checkmark = false
-            self.toDoArray.append(toDoObj)
+            
+            self.array.append(toDoObj)
+            
             self.configureTableView()
             self.toDoTableView.reloadData()
         }

@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseAuth
 
 class ToDoObject {
     
     var text = ""
     var person = ""
-    var key = ""
+    var key: String = ""
     var checkmark = false
     
 }
