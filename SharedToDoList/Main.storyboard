@@ -58,22 +58,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Tk-oP-0DG">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Tk-oP-0DG">
                                 <rect key="frame" x="40" y="156" width="295" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YhN-zV-X56">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YhN-zV-X56">
                                 <rect key="frame" x="40" y="118" width="295" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YhN-zV-X56" firstAttribute="top" secondItem="KI6-tD-S6I" secondAttribute="top" constant="54" id="3Gk-OB-zwh"/>
+                            <constraint firstItem="YhN-zV-X56" firstAttribute="leading" secondItem="KI6-tD-S6I" secondAttribute="leading" constant="40" id="OIi-7i-4Gj"/>
+                            <constraint firstItem="YhN-zV-X56" firstAttribute="leading" secondItem="7Tk-oP-0DG" secondAttribute="leading" id="anh-lQ-l7H"/>
+                            <constraint firstItem="YhN-zV-X56" firstAttribute="trailing" secondItem="7Tk-oP-0DG" secondAttribute="trailing" id="b9j-c1-GHo"/>
+                            <constraint firstItem="YhN-zV-X56" firstAttribute="centerX" secondItem="oBO-m2-Wrf" secondAttribute="centerX" id="lEe-Ag-GQJ"/>
+                            <constraint firstItem="7Tk-oP-0DG" firstAttribute="top" secondItem="YhN-zV-X56" secondAttribute="bottom" constant="8" symbolic="YES" id="vsF-IT-UeM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KI6-tD-S6I"/>
                     </view>
                     <navigationItem key="navigationItem" id="OeR-Ag-dnB">
@@ -106,22 +112,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kjD-4x-4qX">
-                                <rect key="frame" x="39" y="158" width="291" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fVk-uS-PYV">
+                                <rect key="frame" x="39" y="120" width="299" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fVk-uS-PYV">
-                                <rect key="frame" x="39" y="120" width="291" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kjD-4x-4qX">
+                                <rect key="frame" x="39" y="158" width="299" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fVk-uS-PYV" firstAttribute="trailing" secondItem="kjD-4x-4qX" secondAttribute="trailing" id="0JV-Gx-6wu"/>
+                            <constraint firstItem="fVk-uS-PYV" firstAttribute="leading" secondItem="bfk-hP-h8b" secondAttribute="leading" constant="39" id="Cb6-jO-tgA"/>
+                            <constraint firstItem="fVk-uS-PYV" firstAttribute="leading" secondItem="kjD-4x-4qX" secondAttribute="leading" id="Dqg-lO-FHP"/>
+                            <constraint firstItem="fVk-uS-PYV" firstAttribute="top" secondItem="bfk-hP-h8b" secondAttribute="top" constant="56" id="Md5-iH-J3E"/>
+                            <constraint firstItem="kjD-4x-4qX" firstAttribute="top" secondItem="fVk-uS-PYV" secondAttribute="bottom" constant="8" symbolic="YES" id="izP-7j-1eX"/>
+                            <constraint firstItem="bfk-hP-h8b" firstAttribute="trailing" secondItem="fVk-uS-PYV" secondAttribute="trailing" constant="37" id="oli-FN-LpO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bfk-hP-h8b"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ab8-98-NS8">
@@ -144,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IhE-Cp-RhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="-154"/>
+            <point key="canvasLocation" x="1796" y="-154.27286356821591"/>
         </scene>
         <!--List Table View Controller-->
         <scene sceneID="h6w-Dj-9xt">
@@ -248,7 +260,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="AS7-B8-fFn"/>
-        <segue reference="xjg-nK-sga"/>
+        <segue reference="KlM-YP-Yio"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

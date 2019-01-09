@@ -70,7 +70,6 @@ class ListTableViewController: UITableViewController {
         let action = UIAlertAction(title: "Go", style: .default) { (action) in
             let toDoDictionary = ["Sender": Auth.auth().currentUser?.email, "ToDo": textField.text!]
             let va = messagesDB.childByAutoId()
-            print("follwoing is key")
             toDoObj.key = va.description() //2
             print(toDoObj.key)
             toDoObj.text = textField.text! //3
